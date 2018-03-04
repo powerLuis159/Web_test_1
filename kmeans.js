@@ -18,10 +18,7 @@ f = (t) => {
 		return (1 / 3) * Math.pow(29 / 6, 2) * t + 4 / 29;
 }
 
-rgbToLab = (r, g, b) => {
-	return {
-		L: 116*f(
-}
+
 
 
 var app = (function () {
