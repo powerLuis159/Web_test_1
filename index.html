@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proyecto webGL</title>
+    <style>
+        body{
+            background: #0d5f9c;
+        }
+        #main{
+            margin-top: 100px;
+            text-align:center;
+        }
+        #canvas{
+            background-color: #0a3342;
+            height: 600px;
+            width: 600px;
+        }
+        #glcanvas{
+            background-color: #630b0b;
+            height: 600px;
+            width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Palette-based Photo Recoloring     </h1>
+
+
+    <div id="main">
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <canvas id="glcanvas" width="600" height="600"></canvas>
+    </div>
+
+    <div id="colores">
+        <input type="color" id="color0"  hidden="hidden" />
+        <input type="color" id="color1" hidden="hidden" oninput="app.Ale.setColor(1)"/>
+        <input type="color" id="color2" hidden="hidden" oninput="app.Ale.setColor(2)"/>
+        <input type="color" id="color3" hidden="hidden" oninput="app.Ale.setColor(3)"/>
+        <input type="color" id="color4" hidden="hidden" oninput="app.Ale.setColor(4)"/>
+        <input type="color" id="color5" hidden="hidden" oninput="app.Ale.setColor(5)"/>
+        <input type="color" id="color6" hidden="hidden" oninput="app.Ale.setColor(6)"/>
+        <input type="color" id="color7" hidden="hidden" oninput="app.Ale.setColor(7)"/>
+        <input type="color" id="color8" hidden="hidden" oninput="app.Ale.setColor(8)"/>
+        <input type="color" id="color9" hidden="hidden"/>
+        <input type="color" id="color10" hidden="hidden"/>
+        
+    </div>
+    
+
+
+    <br />
+
+
+    <input type="text" id="texto" />
+
+    <script src="gl-matrix.js"></script>
+    <script src="kmeans.js"></script>
+    <script src="web_gl.js"></script>
+    
+    
+    <button onclick="app.loadPicture()"> Abrir Imagen</button>
+    <label for="in_num_k"> Ingrese el n colores</label>
+	<input id ="n_"  type="number" min="3" max="10">
+
+    <button onclick="app.Ale.procesar( document.getElementById('n_').value )"> Procesar k-means </button>
+    <button onclick="main()">Renderizar</button>
+
+</body>
+
+</html>
